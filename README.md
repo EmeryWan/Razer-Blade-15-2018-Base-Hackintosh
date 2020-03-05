@@ -12,7 +12,7 @@
 
 - 因为新冠病疫情原因春节一直宅在家，学校假期也延长了，找到了同款笔记本的教程，所以入坑安装下黑苹果，最近把步骤整理了一下。
 - 为什么买了这个笔记本？我的旧笔记本是 i5-7200U 的双核低压，内存也只有板载的 8G 不能拓展，性能捉急还经常爆内存。本来的打算再凑点钱买乞丐版的 XPS15 无显卡版（i7-9750H + 8G）。无意中看到了雷蛇灵刃15标准版的旧款在清仓（i7-8750H + 1060Max-Q + 16G），价钱比XPS丐版便宜不少还多个显卡和8G内存，我对显卡要求不大，Intel 牙膏挤得好CPU只是频率上低 0.1GHZ。
-- 使用感受：这是我第一个雷蛇的产品，略方正，全黑的外观真的很好看，我没有雷蛇信仰，灯什么的无所谓。下一次买笔记本还是要买大众一点的，冷门笔记本在驱动方面的确有点小问题，windows重装之后插耳机经常无法切换，在Linux（试了下 Ubuntu 和 Manjaro）下，都不能识别到耳机。有哪位知道原因的话希望能教我一下，感谢。
+- 使用感受：这是我第一个雷蛇的产品，外观是很好看，我没有雷蛇信仰，灯什么的无所谓。下一次买笔记本还是要买大众一点的，冷门笔记本在驱动方面的确有点小问题，windows重装之后插耳机经常无法切换，在Linux（试了下 Ubuntu 和 Manjaro）下，都不能识别到耳机。有谁了解的话希望能帮助一下，感谢。
 
 
 
@@ -28,6 +28,7 @@
 - 网卡
 - 一些优化
 - 参考
+- 更新
 
 
 
@@ -57,55 +58,36 @@
 
 ## [2] 安装结果
 
+
 ![2-1](./img/2-1.png)
 
 
 
-```txt
-.
-├── CLOVERX64.efi
-├── config.plist
-├── ACPI
-│   └── patched
-│       ├── DSDT.aml
-│       ├── SSDT-12-OptTabl.aml
-│       ├── SSDT-PNLF.aml
-│       ├── SSDT-UIAC-ALL.aml
-│       ├── SSDT-USBX.aml
-│       └── SSDT-XOSI.aml
-├── drivers
-├── kexts
-│   └── Other
-│       ├── ACPIBatteryManager.kext
-│       ├── AppleALC.kext
-│       ├── CPUFriend.kext
-│       ├── Lilu.kext
-│       ├── LiluFriend.kext
-│       ├── NoTouchID.kext
-│       ├── RealtekRTL8111.kext
-│       ├── SMCBatteryManager.kext
-│       ├── SMCLightSensor.kext
-│       ├── SMCProcessor.kext
-│       ├── SMCSuperIO.kext
-│       ├── VirtualSMC.kext
-│       ├── USBInjectAll.kext
-│       ├── VoodooI2C.kext
-│       ├── VoodooI2CHID.kext
-│       └── WhateverGreen.kext
-├── misc
-├── themes
-└── tools
-```
+### 一些小问题
 
-### 待解决问题
+我也是刚刚接触黑苹果，很多问题我也无法解决，有谁了解的话希望能帮助一下，感谢。
 
-我也是刚刚接触黑苹果，很多问题我也无法解决，哪位好心人会解决的话，希望能教我一下，感谢。
+- ~~麦克风无法使用，系统能找到但无法使用，耳机麦克风无法找到。想要使用的话只能通过蓝牙耳机了。~~
 
-- 麦克风无法使用，系统能找到但无法使用，耳机麦克风无法找到。想要使用的话只能通过蓝牙耳机了。
+- 耳机麦克无法识别。
 
 - 输出设备默认识别到了扬声器和耳机（即使未插入耳机），无法自动切换，需手动切换。
 
   ![2-2](./img/2-2.png)
+
+
+
+### 2020-3-5 更新
+
+今天本来想根据 [这篇文章](https://blog.daliansky.net/Use-AppleALC-sound-card-to-drive-the-correct-posture-of-AppleHDA.html) 尝试自己定制一下 `AppleALC` ，当我把有效节点和路径弄完之后，准备下载 [AppleALC-DEBUG](https://github.com/acidanthera/AppleALC/releases) 编译的时候，没想到最新版本已经添加了这个笔记本的 `layout-id:23`。
+
+![2-3](/Users/emery/Projects/github/Razer-Blade-15-2018-Base-Hackintosh/img/2-3.png)
+
+请按照如图修改，保存后重启。我的电脑耳机麦克风无法识别（我在 Ubuntu 下也无法找到耳机麦克风的有效节点信息）
+
+![2-4](/Users/emery/Projects/github/Razer-Blade-15-2018-Base-Hackintosh/img/2-4.png)
+
+
 
 
 
@@ -601,11 +583,11 @@ External (_SB_.PCI0.PEG0.TGPC, IntObj)    // (from opcode)
 
 相比使用原装的网卡位置稍有点高，压在一根的排线上，但是不影响，如选择同款网卡，请注意绝缘，建议上螺丝的时候不要拧太紧，不松动即可。装上之后的效果如图。
 
-**小提示：**拧螺丝前最好把易碎贴给清理干净。这个贴纸分量太足，卡在螺丝孔中导致一直滑丝。
+**小提示: **拧螺丝前最好把易碎贴给清理干净。这个贴纸分量太足，卡在螺丝孔中导致一直滑丝。
 
 ![7-1](./img/7-1.png)
 
-**使用效果：**2.4G WIFI 和 蓝牙有干扰，尤其是 2.4G WIFI 使用带宽高的时候，蓝牙几乎不能用。其他使用场景基本良好。
+**使用效果: **2.4G WIFI 和 蓝牙有干扰，尤其是 2.4G WIFI 使用带宽高的时候，蓝牙几乎不能用。其他使用场景基本良好。
 
 
 
@@ -625,7 +607,7 @@ Intel 蓝牙默认免驱，WiFi 目前无解。
 
 
 
-**使用效果：**蓝牙键盘，蓝牙音箱没有问题，蓝牙鼠标貌似不能用。
+**使用效果: **蓝牙键盘，蓝牙音箱没有问题，蓝牙鼠标貌似不能用。
 
 
 
@@ -704,3 +686,11 @@ sudo mkdir /var/vm/sleepimage
 - https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh
 - https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/
 - https://blog.daliansky.net/
+
+
+
+# 更新
+
+### 2020-3-5
+
+- 更新 `AppleALC` 版本到 1.4.7，包含修补后的 layout-id: 23。内置麦克风可用。
