@@ -81,11 +81,11 @@
 
 今天本来想根据 [这篇文章](https://blog.daliansky.net/Use-AppleALC-sound-card-to-drive-the-correct-posture-of-AppleHDA.html) 尝试自己定制一下 `AppleALC` ，当我把有效节点和路径弄完之后，准备下载 [AppleALC-DEBUG](https://github.com/acidanthera/AppleALC/releases) 编译的时候，没想到最新版本已经添加了这个笔记本的 `layout-id:23`。
 
-![2-3](/Users/emery/Projects/github/Razer-Blade-15-2018-Base-Hackintosh/img/2-3.png)
+![2-3](./img/2-3.png)
 
 请按照如图修改，保存后重启。我的电脑耳机麦克风无法识别（我在 Ubuntu 下也无法找到耳机麦克风的有效节点信息）
 
-![2-4](/Users/emery/Projects/github/Razer-Blade-15-2018-Base-Hackintosh/img/2-4.png)
+![2-4](./img/2-4.png)
 
 
 
