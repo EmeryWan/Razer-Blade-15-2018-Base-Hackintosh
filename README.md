@@ -8,12 +8,23 @@
 
 # 写在最前
 
-- 我主要参考了 [这篇](https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/) 和 [这篇](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh) 教程，感谢他们的辛苦付出 **(Thanks [stonevil](https://github.com/stonevil) and [vettz500](https://www.tonymacx86.com/members/vettz500.291395/))** 。部分内容为他们所写教程的汉化，详细或精简，我刚接触黑苹果，可能其中有部分问题，建议同时参考他们的教程。
+>* 开学后太忙，并且电脑我换了块更大的硬盘，这台电脑我不打算再安装黑苹果了，本教程可能会不再更新，最新上传的配置文件中，添加了对 type-C 4K 30Hz 的支持，4K 60Hz 显示器会黑屏，无法输出信号。
 
-- 因为新冠病疫情原因春节一直宅在家，学校假期也延长了，找到了同款笔记本的教程，所以入坑安装下黑苹果，最近把步骤整理了一下。
-- 为什么买了这个笔记本？我的旧笔记本是 i5-7200U 的双核低压，内存也只有板载的 8G 不能拓展，性能捉急还经常爆内存。本来的打算再凑点钱买乞丐版的 XPS15 无显卡版（i7-9750H + 8G）。无意中看到了雷蛇灵刃15标准版的旧款在清仓（i7-8750H + 1060Max-Q + 16G），价钱比XPS丐版便宜不少还多个显卡和8G内存，我对显卡要求不大，Intel 牙膏挤得好CPU只是频率上低 0.1GHZ。
-- 使用感受：这是我第一个雷蛇的产品，外观是很好看，我没有雷蛇信仰，灯什么的无所谓。下一次买笔记本还是要买大众一点的，冷门笔记本在驱动方面的确有点小问题，windows重装之后插耳机经常无法切换，在Linux（试了下 Ubuntu 和 Manjaro）下，都不能识别到耳机。有谁了解的话希望能帮助一下，感谢。
+>* 如果想要使用 Clover 安装 10.15 或以下系统的话，可以依旧按照此教程（请将 Clover 和 kext 选择到适应版本）。
 
+>* 如果打算安装新系统使用的话，建议使用 Opencore 安装。推荐参考 [RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur](https://github.com/Mother-FKR/RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur)，该教程写的非常详细，感谢他的付出。
+
+>* 建议不要使用 东芝（铠侠）的固态硬盘，我的硬盘为 东芝 tr200，在 macOS 中莫名卡顿，我的东芝U盘在 macOS 中也莫名卡顿，其他系统没有什么问题。（玄学问题？）
+
+>* 祝你玩得愉快！
+
+---
+
+- 文件下载[Razer-Blade-15-2018-Base-Hackintosh](https://github.com/EmeryWan/Razer-Blade-15-2018-Base-Hackintosh)
+
+- 因为疫情原因春节一直宅在家，学校假期也延长了，找到了同款笔记本的教程，所以入坑安装黑苹果，最近把步骤整理了一下。
+
+- 安装过程我主要参考了 [这篇](https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/) 和 [这篇](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh) 教程，感谢他们的辛苦付出。部分内容为他们所写教程的汉化，详细或精简，我的水平有限，刚接触黑苹果，建议同时参考他们的教程。
 
 
 
@@ -77,7 +88,7 @@
 
 
 
-### 2020-3-5 更新
+### 更新
 
 今天本来想根据 [这篇文章](https://blog.daliansky.net/Use-AppleALC-sound-card-to-drive-the-correct-posture-of-AppleHDA.html) 尝试自己定制一下 `AppleALC` ，当我把有效节点和路径弄完之后，准备下载 [AppleALC-DEBUG](https://github.com/acidanthera/AppleALC/releases) 编译的时候，没想到最新版本已经添加了这个笔记本的 `layout-id:23`。
 
@@ -87,7 +98,9 @@
 
 ![2-4](./img/2-4.png)
 
+添加 type-c 输出 4k，只能支持到最高 30Hz，输出 60Hz 会直接黑屏。可以安装一个 [RDM](https://github.com/avibrazil/RDM) 进行管理。
 
+![2-5](./img/2-5.png)
 
 
 
@@ -687,10 +700,3 @@ sudo mkdir /var/vm/sleepimage
 - https://www.tonymacx86.com/threads/guide-razer-blade-15-2018-detailed-install-guide-high-sierra-10-13-6-17g2208-17g5019.264017/
 - https://blog.daliansky.net/
 
-
-
-# 更新
-
-### 2020-3-5
-
-- 更新 `AppleALC` 版本到 1.4.7，包含修补后的 layout-id: 23。内置麦克风可用。

@@ -202,7 +202,9 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>slide=0 dart=0 nv_disable=1 keepsyms=1 kext-dev-mode=1 debug=0x100 igfxcflbklt=1</string>
+		<string>slide=0 dart=0 nv_disable=1 keepsyms=1 kext-dev-mode=1 debug=0x100 igfxcflbklt=1 brcmfx-country=#a</string>
+		<key>DefaultVolume</key>
+		<string>Hackintosh HD</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -210,7 +212,7 @@
 		<key>SignatureFixup</key>
 		<true/>
 		<key>Timeout</key>
-		<integer>15</integer>
+		<integer>1</integer>
 	</dict>
 	<key>Comment</key>
 	<string>This file is for 10.14.x with native CoffeeLake support</string>
@@ -218,10 +220,12 @@
 	<dict>
 		<key>Audio</key>
 		<dict>
+			<key>AFGLowPowerState</key>
+			<false/>
 			<key>Inject</key>
-			<integer>28</integer>
+			<integer>23</integer>
 			<key>ResetHDA</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -234,10 +238,14 @@
 		<false/>
 		<key>Properties</key>
 		<dict>
-			<key>PciRoot(0)/Pci(0x02,0)</key>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>AACbPg==</data>
+				<key>device-id</key>
+				<data>mz4AAA==</data>
+				<key>enable-hdmi20</key>
+				<data>AQAAAA==</data>
 				<key>framebuffer-memorycount</key>
 				<data>AwAAAA==</data>
 				<key>framebuffer-mobile</key>
@@ -249,12 +257,7 @@
 				<key>framebuffer-portcount</key>
 				<data>AwAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
-				<data>AAAAoA==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
-			<dict>
-				<key>layout-id</key>
-				<integer>23</integer>
+				<data>AAAAgA==</data>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -305,6 +308,11 @@
 				</dict>
 			</array>
 		</dict>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
+		</array>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -322,7 +330,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Catalina</string>
+		<string>MaterialDark</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -340,8 +348,6 @@
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x3E9B0000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -421,7 +427,7 @@
 		<key>MLB</key>
 		<string>C02850207QXJP4FCB</string>
 		<key>ROM</key>
-		<data>mnMPJLBw</data>
+		<data>hOD3F6D3</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
@@ -436,7 +442,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02916200J9JP4FAD</string>
+		<string>C02933404CDJP4F1M</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -466,18 +472,18 @@
 		<key>ProductName</key>
 		<string>MacBookPro15,1</string>
 		<key>SerialNumber</key>
-		<string>C02YL002KGYG</string>
+		<string>C02Z7PYQKGYG</string>
 		<key>SmUUID</key>
-		<string>1B4C44E9-CAFA-4975-A638-23C0D524B070</string>
+		<string>509FB543-D225-49ED-977E-3859C717A0F7</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>CustomUUID</key>
-		<string>538CE613-2B48-4483-A0C7-01451F8DF6F3</string>
+		<string>C94C325B-A781-4F07-98A9-C8989E715178</string>
 		<key>InjectKexts</key>
-		<string>Detect</string>
+		<string>Yes</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>
