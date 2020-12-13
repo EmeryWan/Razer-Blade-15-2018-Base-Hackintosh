@@ -8,15 +8,15 @@
 
 # 写在最前
 
-> 开学后太忙，并且电脑我换了块更大的硬盘，这台电脑我不打算再安装黑苹果了，本教程可能会不再更新，最新上传的配置文件中，添加了对 type-C 4K 30Hz 的支持，4K 60Hz 显示器会黑屏，无法输出信号。
+- 开学后太忙，并且电脑我换了块更大的硬盘，这台电脑我不打算再安装黑苹果了，本教程可能会不再更新，最新上传的配置文件中，添加了对 type-C 4K 30Hz 的支持，4K 60Hz 显示器会黑屏，无法输出信号。
 
-> 如果想要使用 Clover 安装 10.15 或以下系统的话，可以依旧按照此教程（请将 Clover 和 kext 选择到适应版本）。
+- 如果想要使用 Clover 安装 10.15 或以下系统的话，可以依旧按照此教程（请将 Clover 和 kext 选择到适应版本）。
 
-> 如果打算安装新系统使用的话，建议使用 Opencore 安装。推荐参考 [RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur](https://github.com/Mother-FKR/RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur)，该教程写的非常详细，感谢他的付出。
+- 如果打算安装新系统使用的话，建议使用 Opencore 安装。推荐参考 [RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur](https://github.com/Mother-FKR/RazerBlade15-Base-Model-Hackintosh_macOS_Big_Sur)，该教程写的非常详细，感谢他的付出。
 
-> 建议不要使用 东芝（铠侠）的固态硬盘，我的硬盘为 东芝 tr200，在 macOS 中莫名卡顿，我的东芝U盘在 macOS 中也莫名卡顿，其他系统没有什么问题。（玄学问题？）
+- 建议不要使用 东芝（铠侠）的固态硬盘，我的硬盘为**东芝 tr200**，在 macOS 中莫名卡顿，我的**东芝U盘**在 macOS 中也莫名卡顿，其他系统没有什么问题。（玄学问题？）
 
-> 祝你玩得愉快！
+- 祝你玩得愉快！
 
 ---
 
